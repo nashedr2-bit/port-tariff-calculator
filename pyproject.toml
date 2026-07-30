@@ -1,0 +1,32 @@
+[project]
+name = "port-tariff-engine"
+version = "0.1.0"
+description = "Agentic system that reads port tariff documents and calculates vessel dues."
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+llm = [
+    "google-generativeai>=0.8",
+    "pdfplumber>=0.11",
+]
+api = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
