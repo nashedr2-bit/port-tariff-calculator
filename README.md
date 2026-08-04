@@ -330,7 +330,7 @@ output shows exactly what the agent extracted for each tariff.
 **Code quality.** Modular layers (ingestion / extraction / rules / calculation /
 agent / api), each single-responsibility; typed models with Pydantic
 validation at every boundary; explicit, informative error handling; a
-provider-agnostic LLM interface; and 57 tests covering primitives, engine,
+provider-agnostic LLM interface; and 61 tests covering primitives, engine,
 ingestion, extraction, orchestration, the NL parser, and the API — all runnable
 offline.
 
@@ -361,7 +361,7 @@ src/port_tariff/
   calculation/  primitives + deterministic engine (no LLM, no rates)
   agent/        NL query parser, tariff locations, orchestrator
   api/          FastAPI app + request/response models
-tests/          57 tests, fully offline
+tests/          61 tests, fully offline
 data/           the reference Transnet tariff PDF
 run_live_extraction.py   end-to-end live validation against ground truth
 ```
